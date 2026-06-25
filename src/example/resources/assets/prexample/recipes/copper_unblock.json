@@ -1,0 +1,18 @@
+{
+  "type": "forge:ore_shaped",
+  "group": "iron_ingot",
+  "pattern": [
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "prexample:metal_block",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "prexample:material",
+    "data": 0,
+    "count": 9
+  }
+}

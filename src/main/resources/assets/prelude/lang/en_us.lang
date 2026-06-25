@@ -1,0 +1,18 @@
+prelude.gui.config_entries=%d entries
+prelude.gui.config_sync_fail=Config sync failed! See the game log for more details.
+
+prelude.enum.block_side.north=North
+prelude.enum.block_side.east=East
+prelude.enum.block_side.south=South
+prelude.enum.block_side.west=West
+
+prelude.enum.relative_face.front=Front
+prelude.enum.relative_face.left=Left
+prelude.enum.relative_face.back=Back
+prelude.enum.relative_face.right=Right
+prelude.enum.relative_face.up=Up
+prelude.enum.relative_face.down=Down
+
+prelude.enum.redstone_behaviour.none=Ignored
+prelude.enum.redstone_behaviour.active_low=Active Low
+prelude.enum.redstone_behaviour.active_high=Active High

@@ -1,0 +1,18 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "prexample:material",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "prexample:metal_block",
+    "data": 0
+  }
+}

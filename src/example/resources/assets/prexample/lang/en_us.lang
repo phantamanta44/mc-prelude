@@ -1,0 +1,15 @@
+itemGroup.prexample=Prelude Example Mod
+
+tile.prexample.ore.copper.name=Copper Ore
+
+tile.prexample.metal_block.copper.name=Block of Copper
+tile.prexample.metal_block.steel.name=Block of Steel
+
+tile.prexample.alloy_furnace.name=Alloy Furnace
+tile.prexample.barrel.name=Barrel
+
+item.prexample.material.copper_ingot.name=Copper Ingot
+item.prexample.material.steel_ingot.name=Steel Ingot
+
+prexample.gui.alloy_furnace.name=Alloy Furnace
+prexample.subtitles.alloy_furnace_working=Alloy furnace smelts

@@ -1,0 +1,17 @@
+[
+  {
+    "modid": "${modId}",
+    "name": "Prelude",
+    "description": "\"It's compositional\", she explains.",
+    "version": "${modVersion}",
+    "mcversion": "${mcVersion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["phantamanta44"],
+    "logoFile": "assets/${modId}/logo.png",
+    "screenshots": [],
+    "useDependencyInformation": true,
+    "dependencies": ["forgelin_continuous"],
+    "requiredMods": ["forgelin_continuous@[2.4.20,)", "mixinbooter@[11.0,)"]
+  }
+]

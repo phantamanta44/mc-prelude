@@ -1,0 +1,25 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "www",
+    "ici",
+    "www"
+  ],
+  "key": {
+    "w": {
+      "type": "forge:ore_dict",
+      "ore": "plankWood"
+    },
+    "i": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "c": {
+      "type": "forge:ore_dict",
+      "ore": "chestWood"
+    }
+  },
+  "result": {
+    "item": "prexample:barrel"
+  }
+}

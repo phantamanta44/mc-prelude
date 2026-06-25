@@ -1,0 +1,8 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "prexample:blocks/machine_side",
+    "front": "prexample:blocks/alloy_furnace_off",
+    "side": "prexample:blocks/machine_side"
+  }
+}

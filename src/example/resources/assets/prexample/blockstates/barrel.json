@@ -1,0 +1,49 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "prexample:barrel"
+  },
+  "variants": {
+    "facing": {
+      "north": {},
+      "south": {
+        "y": 180
+      },
+      "west": {
+        "y": 270
+      },
+      "east": {
+        "y": 90
+      },
+      "up": {
+        "x": 270
+      },
+      "down": {
+        "x": 90
+      }
+    },
+    "fill": {
+      "0": {},
+      "1": {
+        "textures": {
+          "front": "prexample:blocks/barrel_front_1"
+        }
+      },
+      "2": {
+        "textures": {
+          "front": "prexample:blocks/barrel_front_2"
+        }
+      },
+      "3": {
+        "textures": {
+          "front": "prexample:blocks/barrel_front_3"
+        }
+      },
+      "4": {
+        "textures": {
+          "front": "prexample:blocks/barrel_front_4"
+        }
+      }
+    }
+  }
+}

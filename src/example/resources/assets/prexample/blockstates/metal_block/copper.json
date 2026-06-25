@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "normal": {
+      "model": "prexample:metal_block/copper"
+    }
+  }
+}

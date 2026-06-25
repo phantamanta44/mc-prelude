@@ -1,0 +1,33 @@
+{
+  "package": "st.evening.mc.prelude.coremod.mixin",
+  "refmap": "mixins.prelude.refmap.json",
+  "required": true,
+  "mixins": [
+    "AnvilChunkLoaderMixin",
+    "AttachCapabilitiesEventMixin",
+    "CapabilityDispatcherAccessor",
+    "ContainerMixin",
+    "ForgeChunkManagerMixin",
+    "ForgeEventFactoryMixin",
+    "ItemStackAccessor",
+    "MinecraftMixin",
+    "NBTBaseAccessor",
+    "NBTTagCompoundAccessor",
+    "NetworkManagerMixin",
+    "PacketBufferMixin",
+    "PacketUtilMixin",
+    "SoundEventAccessor",
+    "TileEntityAccessor",
+    "TileEntityMixin",
+    "WorldMixin"
+  ],
+  "client": [
+    "AbstractResourcePackAccessor",
+    "FallbackResourceManagerAccessor",
+    "FontRendererAccessor",
+    "GlStateManagerAccessor",
+    "GuiContainerMixin",
+    "GuiEditArrayAccessor",
+    "GuiScreenMixin"
+  ]
+}

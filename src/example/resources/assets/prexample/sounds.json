@@ -1,0 +1,11 @@
+{
+  "block.alloy_furnace.working": {
+    "subtitle": "prexample.subtitles.alloy_furnace_working",
+    "sounds": [
+      {
+        "name": "prexample:alloy_furnace_working",
+        "volume": 0.5
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "iii",
+    "hfh",
+    "crc"
+  ],
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "h": {
+      "item": "minecraft:hopper"
+    },
+    "f": {
+      "item": "minecraft:furnace"
+    },
+    "c": {
+      "type": "forge:ore_dict",
+      "ore": "ingotCopper"
+    },
+    "r": {
+      "type": "forge:ore_dict",
+      "ore": "dustRedstone"
+    }
+  },
+  "result": {
+    "item": "prexample:alloy_furnace"
+  }
+}

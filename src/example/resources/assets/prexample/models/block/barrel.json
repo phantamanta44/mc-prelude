@@ -1,0 +1,28 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "front": "prexample:blocks/barrel_front_0",
+    "side": "prexample:blocks/barrel_side",
+    "back": "prexample:blocks/barrel_back",
+    "particle": "prexample:blocks/barrel_side"
+  },
+  "elements": [{
+    "from": [0, 0, 0],
+    "to": [16, 16, 16],
+    "faces": {
+      "north": { "texture": "#front", "cullface": "north" },
+      "south": { "texture": "#back", "cullface": "south" },
+      "west": { "texture": "#side", "cullface": "west" },
+      "up": { "texture": "#side", "cullface": "up", "rotation": 90 },
+      "east": { "texture": "#side", "cullface": "east", "rotation": 180 },
+      "down": { "texture": "#side", "cullface": "down", "rotation": 270 }
+    }
+  }],
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [0, 135, 0],
+      "translation": [0, 0, 0],
+      "scale": [0.40, 0.40, 0.40]
+    }
+  }
+}
