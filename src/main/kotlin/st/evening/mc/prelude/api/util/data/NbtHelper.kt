@@ -14,10 +14,10 @@ import net.minecraft.nbt.NBTTagLongArray
 import net.minecraft.nbt.NBTTagShort
 import net.minecraft.nbt.NBTTagString
 import net.minecraftforge.common.util.Constants
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper
 import st.evening.mc.prelude.api.util.collection.collectToByteArray
 import st.evening.mc.prelude.api.util.collection.collectToIntArray
 import st.evening.mc.prelude.api.util.collection.collectToLongArray
-import st.evening.mc.prelude.coremod.mixin.NBTTagCompoundAccessor
 import java.util.UUID
 
 fun NBTBase.isEnd(): Boolean = id.toInt() == Constants.NBT.TAG_END
@@ -149,8 +149,10 @@ fun NBTTagCompound.getOrCreateCompound(key: String): NBTTagCompound =
 fun NBTTagCompound.getOrCreateList(key: String): NBTTagList =
     getListOrNull(key) ?: NBTTagList().also { setTag(key, it) }
 
+val fNBTTagCompound_tagMap = ObfuscationReflectionHelper.findField(NBTTagCompound::class.java, "field_74784_a")
+
 inline fun NBTTagCompound.forEach(f: (Map.Entry<String, NBTBase>) -> Unit) {
-    (this as NBTTagCompoundAccessor).`prelude$tagMap`().forEach(f)
+    (fNBTTagCompound_tagMap.get(this) as Map<String, NBTBase>).forEach(f)
 }
 
 inline fun NBTTagCompound.forEachInt(f: (String, Int) -> Unit) {
@@ -232,7 +234,7 @@ operator fun NBTTagCompound.set(key: String, value: IntArray): Unit = setIntArra
 operator fun NBTTagCompound.set(key: String, value: LongArray): Unit = setLongArray(key, value)
 
 fun NBTTagCompound.shallowMerge(o: NBTTagCompound) {
-    (o as NBTTagCompoundAccessor).`prelude$tagMap`().forEach { (key, value) ->
+    (fNBTTagCompound_tagMap.get(o) as Map<String, NBTBase>).forEach { (key, value) ->
         if (value.id == Constants.NBT.TAG_COMPOUND.toByte()) {
             getCompoundOrNull(key)?.let {
                 it.shallowMerge(value as NBTTagCompound)

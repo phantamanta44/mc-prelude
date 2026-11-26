@@ -9,7 +9,7 @@ plugins {
 
 val projectModId: String = "prelude"
 group = "st.evening.mc.prelude"
-version = "0.0.1"
+version = "0.0.1a"
 
 preludeBuild {
     modId = projectModId

@@ -11,8 +11,6 @@
     "ForgeEventFactoryMixin",
     "ItemStackAccessor",
     "MinecraftMixin",
-    "NBTBaseAccessor",
-    "NBTTagCompoundAccessor",
     "NetworkManagerMixin",
     "PacketBufferMixin",
     "PacketUtilMixin",

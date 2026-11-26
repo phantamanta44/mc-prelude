@@ -16,13 +16,16 @@ import net.minecraft.nbt.NBTTagShort
 import net.minecraft.nbt.NBTTagString
 import net.minecraft.network.PacketBuffer
 import net.minecraftforge.common.util.Constants
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper
 import st.evening.mc.prelude.api.data.tjson.JsonPath
 import st.evening.mc.prelude.api.data.tjson.TJson
 import st.evening.mc.prelude.api.data.tjson.forEachValue
 import st.evening.mc.prelude.api.util.data.forEach
 import st.evening.mc.prelude.api.util.data.plusAssign
 import st.evening.mc.prelude.api.util.data.set
-import st.evening.mc.prelude.coremod.mixin.NBTBaseAccessor
+import st.evening.mc.prelude.api.util.system.asAccessible
+import java.io.DataInput
+import java.io.DataOutput
 
 abstract class IdentityNbtSerializer<N : NBTBase, J : TJson> : FullSerializer<N, N, J> {
     override fun serializeToNbt(x: N): N = x
@@ -76,10 +79,14 @@ object NbtTagSerializer : IdentityNbtSerializer<NBTBase, TJson>() {
         else -> throw SerializationException.withPath("Cannot deserialize tag: $dto")
     }
 
+    private val mNBTBase_write = ObfuscationReflectionHelper.findMethod(NBTBase::class.java, "func_74734_a", Void::class.java, DataOutput::class.java).asAccessible()
+    private val mNBTBase_read = ObfuscationReflectionHelper.findMethod(NBTBase::class.java, "func_152446_a", Void::class.java,  DataInput::class.java, Int::class.javaPrimitiveType, NBTSizeTracker::class.java).asAccessible()
+
     override fun serializeToNetwork(buf: PacketBuffer, x: NBTBase) {
         buf.writeByte(x.id.toInt())
         // CompressedStreamTools writes an empty string here for some reason; we don't do that
-        (x as NBTBaseAccessor).`prelude$write`(ByteBufOutputStream(buf))
+//        (x as NBTBaseAccessor).`prelude$write`(ByteBufOutputStream(buf))
+        mNBTBase_write(x, ByteBufOutputStream(buf))
     }
 
     override fun deserializeFromNetwork(buf: PacketBuffer): NBTBase {
@@ -89,7 +96,8 @@ object NbtTagSerializer : IdentityNbtSerializer<NBTBase, TJson>() {
         }
         return NBTBase.create(tagType).also {
             // CompressedStreamTools writes an empty string here for some reason; we don't do that
-            (it as NBTBaseAccessor).`prelude$read`(ByteBufInputStream(buf), 0, NBTSizeTracker.INFINITE)
+//            (it as NBTBaseAccessor).`prelude$read`(ByteBufInputStream(buf), 0, NBTSizeTracker.INFINITE)
+            mNBTBase_read(it, ByteBufInputStream(buf), 0, NBTSizeTracker.INFINITE)
         }
     }
 }
